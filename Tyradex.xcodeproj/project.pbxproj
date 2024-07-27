@@ -7,18 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D9237C762C54F1A0007B37E3 /* TyradexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9237C752C54F1A0007B37E3 /* TyradexApp.swift */; };
-		D9237C782C54F1A0007B37E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9237C772C54F1A0007B37E3 /* ContentView.swift */; };
+		D9237C762C54F1A0007B37E3 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9237C752C54F1A0007B37E3 /* App.swift */; };
 		D9237C7A2C54F1A1007B37E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9237C792C54F1A1007B37E3 /* Assets.xcassets */; };
 		D9237C7D2C54F1A1007B37E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9237C7C2C54F1A1007B37E3 /* Preview Assets.xcassets */; };
+		D9237C882C54F1E3007B37E3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9237C872C54F1E3007B37E3 /* HomeView.swift */; };
+		D9237C8B2C54F226007B37E3 /* TyradexKit in Frameworks */ = {isa = PBXBuildFile; productRef = D9237C8A2C54F226007B37E3 /* TyradexKit */; };
+		D9237C8D2C54F261007B37E3 /* PokemonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9237C8C2C54F261007B37E3 /* PokemonRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D9237C722C54F1A0007B37E3 /* Tyradex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tyradex.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9237C752C54F1A0007B37E3 /* TyradexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TyradexApp.swift; sourceTree = "<group>"; };
-		D9237C772C54F1A0007B37E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D9237C752C54F1A0007B37E3 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		D9237C792C54F1A1007B37E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9237C7C2C54F1A1007B37E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D9237C872C54F1E3007B37E3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D9237C8C2C54F261007B37E3 /* PokemonRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9237C8B2C54F226007B37E3 /* TyradexKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +55,10 @@
 		D9237C742C54F1A0007B37E3 /* Tyradex */ = {
 			isa = PBXGroup;
 			children = (
-				D9237C752C54F1A0007B37E3 /* TyradexApp.swift */,
-				D9237C772C54F1A0007B37E3 /* ContentView.swift */,
-				D9237C792C54F1A1007B37E3 /* Assets.xcassets */,
+				D9237C752C54F1A0007B37E3 /* App.swift */,
+				D9237C832C54F1B9007B37E3 /* Views */,
+				D9237C842C54F1C0007B37E3 /* Components */,
+				D9237C852C54F1C9007B37E3 /* Resources */,
 				D9237C7B2C54F1A1007B37E3 /* Preview Content */,
 			);
 			path = Tyradex;
@@ -65,6 +70,38 @@
 				D9237C7C2C54F1A1007B37E3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D9237C832C54F1B9007B37E3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D9237C872C54F1E3007B37E3 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D9237C842C54F1C0007B37E3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D9237C8C2C54F261007B37E3 /* PokemonRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D9237C852C54F1C9007B37E3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D9237C862C54F1D0007B37E3 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D9237C862C54F1D0007B37E3 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D9237C792C54F1A1007B37E3 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +120,9 @@
 			dependencies = (
 			);
 			name = Tyradex;
+			packageProductDependencies = (
+				D9237C8A2C54F226007B37E3 /* TyradexKit */,
+			);
 			productName = Tyradex;
 			productReference = D9237C722C54F1A0007B37E3 /* Tyradex.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +151,9 @@
 				Base,
 			);
 			mainGroup = D9237C692C54F1A0007B37E3;
+			packageReferences = (
+				D9237C892C54F226007B37E3 /* XCRemoteSwiftPackageReference "TyradexKit" */,
+			);
 			productRefGroup = D9237C732C54F1A0007B37E3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +180,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9237C782C54F1A0007B37E3 /* ContentView.swift in Sources */,
-				D9237C762C54F1A0007B37E3 /* TyradexApp.swift in Sources */,
+				D9237C882C54F1E3007B37E3 /* HomeView.swift in Sources */,
+				D9237C762C54F1A0007B37E3 /* App.swift in Sources */,
+				D9237C8D2C54F261007B37E3 /* PokemonRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +241,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -254,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -275,11 +319,14 @@
 				DEVELOPMENT_TEAM = 8TMMB69WBG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Tyradex;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,11 +351,14 @@
 				DEVELOPMENT_TEAM = 8TMMB69WBG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Tyradex;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,6 +394,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D9237C892C54F226007B37E3 /* XCRemoteSwiftPackageReference "TyradexKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/theosementa/TyradexKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D9237C8A2C54F226007B37E3 /* TyradexKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D9237C892C54F226007B37E3 /* XCRemoteSwiftPackageReference "TyradexKit" */;
+			productName = TyradexKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D9237C6A2C54F1A0007B37E3 /* Project object */;
 }

@@ -1,0 +1,15 @@
+{
+  "originHash" : "7090e1caf56249d945e0ad579d1dc1b1519afae86ab67d5c255d0f4019c3cc1b",
+  "pins" : [
+    {
+      "identity" : "tyradexkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/theosementa/TyradexKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "686409482e4370dc4e85e3c8584d0933ccf18527"
+      }
+    }
+  ],
+  "version" : 3
+}
