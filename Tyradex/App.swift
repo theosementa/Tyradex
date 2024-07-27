@@ -11,17 +11,22 @@ import TyradexKit
 @main
 struct TyradexApp: App {
     
+    @StateObject private var router: NavigationManager = .init(isPresented: .constant(.home))
+    
     // Repository
     @StateObject private var pokemonRepo: PokemonRepository = .shared
     
     // MARK: -
     var body: some Scene {
         WindowGroup {
-            HomeView()
-                .environmentObject(pokemonRepo)
-                .task {
-                    await pokemonRepo.fetchPokemons()
-                }
+            NavStack(router: router) {
+                HomeView()
+            }
+            .environmentObject(router)
+            .environmentObject(pokemonRepo)
+            .task {
+                await pokemonRepo.fetchPokemons()
+            }
         }
     } // End body
 } // End struct

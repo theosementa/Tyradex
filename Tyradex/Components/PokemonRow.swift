@@ -16,14 +16,15 @@ struct PokemonRow: View {
     // MARK: -
     var body: some View {
         HStack(spacing: 16) {
-            if let pokedexID = pokemon.pokedexID {
-                Text(pokedexID < 10 ? "0\(pokedexID)" : "\(pokedexID)")
-                    .font(.system(size: 20, weight: .semibold, design: .monospaced))
-            }
+//            if let pokedexID = pokemon.pokedexID {
+//                Text(pokedexID < 10 ? "0\(pokedexID)" : "\(pokedexID)")
+//                    .font(.system(size: 20, weight: .semibold, design: .monospaced))
+//            }
             
             if let sprites = pokemon.sprites, let url = URL(string: sprites.regular) {
                 AsyncImage(url: url) { image in
-                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .fill(Color.Apple.componentInComponent)
                         .overlay {
                             image
                                 .resizable()
@@ -31,17 +32,30 @@ struct PokemonRow: View {
                                 .padding(10)
                         }
                 } placeholder: {
-                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .fill(Color.Apple.componentInComponent)
                         .overlay {
                             ProgressView()
                         }
                 }
-                .frame(width: 50, height: 50)
+                .frame(width: 82, height: 82)
+                .overlay(alignment: .topLeading) {
+                    if let pokedexID = pokemon.pokedexID {
+                        Text("#" + (pokedexID < 10 ? "0\(pokedexID)" : "\(pokedexID)"))
+                            .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                            .padding(4)
+                            .padding(.horizontal, 4)
+                            .background {
+                                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                    .fill(Color.Apple.backgroundComponent)
+                            }
+                    }
+                }
             }
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(pokemon.nameLocalized)
-                    .font(.system(size: 18, weight: .semibold, design: .monospaced))
+                    .font(.system(size: 20, weight: .semibold, design: .monospaced))
                 HStack {
                     if let stats = pokemon.stats {
                         if let atk = stats.atk {
@@ -55,9 +69,10 @@ struct PokemonRow: View {
                         }
                     }
                 }
-                .font(.system(size: 12, weight: .medium, design: .monospaced))
+                .font(.system(size: 14, weight: .medium, design: .monospaced))
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.vertical)
             
             VStack(spacing: 8) {
                 ForEach(pokemon.types) { type in
@@ -77,6 +92,12 @@ struct PokemonRow: View {
                     }
                 }
             }
+            .padding(.vertical)
+            .padding(.trailing)
+        }
+        .background {
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .fill(Color.Apple.backgroundComponent)
         }
     } // End body
 } // End struct
@@ -85,5 +106,5 @@ struct PokemonRow: View {
 #Preview {
     PokemonRow(pokemon: .preview)
         .padding()
-        .background(Color.black.opacity(0.1))
+        .background(Color.black.opacity(0.3))
 }
