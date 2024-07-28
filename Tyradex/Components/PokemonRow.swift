@@ -16,11 +16,6 @@ struct PokemonRow: View {
     // MARK: -
     var body: some View {
         HStack(spacing: 16) {
-//            if let pokedexID = pokemon.pokedexID {
-//                Text(pokedexID < 10 ? "0\(pokedexID)" : "\(pokedexID)")
-//                    .font(.system(size: 20, weight: .semibold, design: .monospaced))
-//            }
-            
             if let sprites = pokemon.sprites, let url = URL(string: sprites.regular) {
                 AsyncImage(url: url) { image in
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
