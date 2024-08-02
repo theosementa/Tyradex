@@ -22,20 +22,22 @@ struct PokemonDetailView: View {
     var body: some View {
         ScrollView {
             VStack {
-                if let selectedSprite = viewModel.selectedSprite {
-                    AsyncImage(url: selectedSprite) { image in
-                        image
-                            .resizable()
-                            .scaledToFill()
-                            .matchedGeometryEffect(id: selectedSprite, in: animation)
-                    } placeholder: {
-                        ProgressView()
-                    }
-                    .frame(width: 300, height: 300)
-                } else {
+                AsyncImage(url: viewModel.selectedSprite) { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .if(viewModel.selectedSprite != nil) { view in
+                            view
+                                .matchedGeometryEffect(id: viewModel.selectedSprite!, in: animation, isSource: true)
+                        }
+                } placeholder: {
                     Color.clear
                         .frame(width: 300, height: 300)
+                        .overlay {
+                            ProgressView()
+                        }
                 }
+                .frame(width: 300, height: 300)
                 
                 HStack {
                     ForEach(viewModel.spritesURLs, id: \.self) { sprite in
@@ -49,6 +51,8 @@ struct PokemonDetailView: View {
                 }
             }
             .padding()
+            
+            
         } // End ScrollView
         .scrollIndicators(.hidden)
         .background(Color.Apple.background)
@@ -65,5 +69,16 @@ struct PokemonDetailView: View {
 #Preview {
     NavigationStack {
         PokemonDetailView(pokemon: .preview)
+    }
+}
+
+
+extension View {
+    @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+        if condition {
+            transform(self)
+        } else {
+            self
+        }
     }
 }

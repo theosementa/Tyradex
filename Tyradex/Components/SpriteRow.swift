@@ -20,15 +20,8 @@ struct SpriteRow: View {
     // MARK: -
     var body: some View {
         Button(action: {
-            nextSelectedSprite = sprite
-            withAnimation(.easeInOut(duration: 0.3)) {
-                selectedSprite = nil
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                withAnimation(.easeInOut(duration: 0.3)) {
-                    selectedSprite = nextSelectedSprite
-                }
+            withAnimation(.smooth(duration: 2)) {
+                selectedSprite = sprite
             }
         }, label: {
             AsyncImage(url: sprite) { image in
