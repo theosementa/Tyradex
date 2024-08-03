@@ -11,10 +11,7 @@ struct SpriteRow: View {
     
     // Builder
     var sprite: URL
-    
     @Binding var selectedSprite: URL?
-    @Binding var nextSelectedSprite: URL?
-
     let animation: Namespace.ID
     
     // MARK: -

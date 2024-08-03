@@ -11,6 +11,5 @@ final class PokemonDetailViewModel: ObservableObject {
     
     @Published var spritesURLs: [URL] = []
     @Published var selectedSprite: URL? = nil
-    @Published var nextSelectedSprite: URL?
     
 }

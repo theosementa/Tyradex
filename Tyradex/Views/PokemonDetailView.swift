@@ -22,29 +22,17 @@ struct PokemonDetailView: View {
     var body: some View {
         ScrollView {
             VStack {
-                AsyncImage(url: viewModel.selectedSprite) { image in
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .if(viewModel.selectedSprite != nil) { view in
-                            view
-                                .matchedGeometryEffect(id: viewModel.selectedSprite!, in: animation, isSource: true)
-                        }
-                } placeholder: {
-                    Color.clear
-                        .frame(width: 300, height: 300)
-                        .overlay {
-                            ProgressView()
-                        }
-                }
-                .frame(width: 300, height: 300)
+                PokemonImage(
+                    pokemon: pokemon,
+                    selectedSprite: $viewModel.selectedSprite,
+                    animation: animation
+                )
                 
                 HStack {
                     ForEach(viewModel.spritesURLs, id: \.self) { sprite in
                         SpriteRow(
                             sprite: sprite,
                             selectedSprite: $viewModel.selectedSprite,
-                            nextSelectedSprite: $viewModel.nextSelectedSprite,
                             animation: animation
                         )
                     }
@@ -52,7 +40,8 @@ struct PokemonDetailView: View {
             }
             .padding()
             
-            
+            StatisticsRow(pokemon: pokemon)
+                .padding()
         } // End ScrollView
         .scrollIndicators(.hidden)
         .background(Color.Apple.background)
@@ -69,16 +58,5 @@ struct PokemonDetailView: View {
 #Preview {
     NavigationStack {
         PokemonDetailView(pokemon: .preview)
-    }
-}
-
-
-extension View {
-    @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
-        if condition {
-            transform(self)
-        } else {
-            self
-        }
     }
 }
